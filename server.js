@@ -6,6 +6,7 @@ const { DatabaseSync } = require("node:sqlite");
 const bcrypt = require("bcryptjs");
 
 const app = express();
+app.set("trust proxy", 1);
 const db = new DatabaseSync(path.join(__dirname, "apollon.db"));
 
 
