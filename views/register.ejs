@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APOLLON | Kayıt Ol</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#080710;color:#fff;font-family:Arial;display:grid;place-items:center;padding:20px}.panel{width:100%;max-width:420px;background:#121020;border:1px solid #6541a5;border-radius:20px;padding:32px;box-shadow:0 0 35px #7135bd22}h1{color:#bd8aff;text-align:center;letter-spacing:3px}p{text-align:center;color:#aaa}.field{margin:20px 0}label{display:block;margin-bottom:8px;color:#c8b5e9}input{width:100%;padding:14px;background:#090812;border:1px solid #49366b;border-radius:9px;color:white;font-size:16px}button{width:100%;padding:15px;background:linear-gradient(90deg,#7135bd,#a34dff);border:0;border-radius:9px;color:white;font-weight:bold;font-size:15px;cursor:pointer}.error{background:#421b2a;color:#ff9eae;padding:12px;border-radius:8px;margin:15px 0;text-align:center}.bottom{text-align:center;margin-top:22px;color:#aaa}.bottom a{color:#c18cff}
+</style>
+</head>
+<body>
+<div class="panel">
+<h1>APOLLON</h1>
+<p>NEXUS MEMBER SYSTEM</p>
+<h2>Hesap Oluştur</h2>
+<% if (error) { %><div class="error"><%= error %></div><% } %>
+<form method="POST" action="/register">
+<div class="field"><label>Kullanıcı adı</label><input name="username" minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]+" required placeholder="Kullanıcı adın"></div>
+<div class="field"><label>Şifre</label><input type="password" name="password" minlength="8" maxlength="72" required placeholder="En az 8 karakter"></div>
+<button type="submit">HESAP OLUŞTUR</button>
+</form>
+<div class="bottom">Zaten hesabın var mı? <a href="/login">Giriş yap</a></div>
+</div>
+</body>
+</html>

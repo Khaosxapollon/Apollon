@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APOLLON | Profil</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#080710;color:white;font-family:Arial;padding:25px}.top{max-width:850px;margin:auto;display:flex;justify-content:space-between;align-items:center}.top h1{color:#bd8aff;letter-spacing:3px}.panel{max-width:850px;margin:60px auto;background:#121020;border:1px solid #6541a5;border-radius:18px;padding:30px}.tag{color:#bd8aff;letter-spacing:2px}.info{background:#090812;padding:18px;border-radius:10px;margin-top:15px;color:#ddd}.btn{display:inline-block;background:#7135bd;color:white;padding:12px 18px;border:0;border-radius:8px;text-decoration:none;cursor:pointer}.muted{color:#aaa}
+</style>
+</head>
+<body>
+<div class="top">
+<h1>APOLLON</h1>
+<form method="POST" action="/logout"><button class="btn">Çıkış yap</button></form>
+</div>
+<div class="panel">
+<div class="tag">NEXUS MEMBER PROFILE</div>
+<h2>Hoş geldin, <%= user.username %>!</h2>
+<p class="muted">APOLLON üye paneline başarıyla giriş yaptın.</p>
+<div class="info">Üye numarası: #<%= user.id %></div>
+<div class="info">Kullanıcı adı: <%= user.username %></div>
+<div class="info">Kayıt tarihi: <%= user.created_at %></div>
+<br><a class="btn" href="/">Ana sayfa</a>
+</div>
+</body>
+</html>

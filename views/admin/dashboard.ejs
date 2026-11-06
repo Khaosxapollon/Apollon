@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>APOLLON NEXUS</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box}
+:root{--bg:#070711;--panel:#111120;--line:#292442;--purple:#a855f7;--blue:#38bdf8;--pink:#ec4899;--muted:#85839e}
+body{margin:0;background:var(--bg);color:#f8f7ff;font-family:Inter,Arial;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 15% 10%,#6516a52b,transparent 35%),radial-gradient(circle at 85% 80%,#164c9d25,transparent 35%)}
+.layout{display:flex;min-height:100vh}
+aside{width:250px;background:#0b0b16;border-right:1px solid var(--line);padding:28px 18px;display:flex;flex-direction:column}
+.logo{font:900 27px Orbitron;letter-spacing:4px;text-shadow:0 0 20px #a855f7}
+.logo span{color:var(--purple)}
+.sub{font-size:9px;letter-spacing:4px;color:#88809e;margin-top:9px}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.label{font-size:9px;letter-spacing:3px;color:#69647f;margin:20px 10px 12px}
+nav a{display:flex;gap:13px;align-items:center;padding:14px 12px;margin:5px 0;border-radius:10px;color:#9995b1;text-decoration:none;font-size:12px;transition:.2s}
+nav a:hover,nav a.active{background:linear-gradient(100deg,#7728a83d,#2764a522);color:white;border:1px solid #9b5cce45}
+nav a b{color:#c084fc;font-size:17px;width:20px}
+.bottom{margin-top:auto}
+.profile{background:#151323;border:1px solid var(--line);padding:14px;border-radius:12px;display:flex;align-items:center;gap:11px}
+.avatar{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#8b5cf6,#db2777);display:grid;place-items:center;font-weight:900}
+.profile small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+main{flex:1;padding:32px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.eyebrow{font:11px Orbitron;color:#c084fc;letter-spacing:3px}
+h1{font:700 25px Orbitron;margin:12px 0}
+.desc{color:var(--muted);font-size:12px}
+.live{border:1px solid #236647;background:#10241c;color:#6ee7a5;padding:11px 15px;border-radius:30px;font-size:11px}
+.dot{display:inline-block;width:7px;height:7px;background:#4ade80;border-radius:50%;margin-right:8px;box-shadow:0 0 10px #4ade80}
+.hero{margin-top:30px;padding:30px;border-radius:17px;border:1px solid #7044a866;background:linear-gradient(110deg,#32134d99,#11172cdd 65%,#142b4899);position:relative;overflow:hidden}
+.hero:after{content:"N";position:absolute;right:35px;top:-60px;font:900 230px Orbitron;color:#ffffff08}
+.hero small{color:#d8b4fe;letter-spacing:3px;font-size:10px}
+.hero h2{font:900 28px Orbitron;margin:13px 0}
+.hero p{color:#b7b1cb;font-size:12px;line-height:1.8;max-width:510px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:20px}
+.card{background:#11111f;border:1px solid var(--line);border-radius:14px;padding:20px;position:relative;overflow:hidden}
+.card:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-35px;top:-40px;background:#a855f718;filter:blur(15px)}
+.card-label{font-size:10px;letter-spacing:1.5px;color:var(--muted)}
+.value{font:700 25px Orbitron;margin:17px 0 9px}
+.card small{font-size:10px;color:#77748f}
+.purple{color:#c084fc}.blue{color:#7dd3fc}.pink{color:#f9a8d4}
+.section-title{font:600 13px Orbitron;margin:30px 0 15px}
+.system{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.info{background:#10101c;border:1px solid var(--line);border-radius:11px;padding:17px}
+.info span{display:block;color:var(--muted);font-size:10px;margin-bottom:9px}
+.info strong{font-size:12px;overflow-wrap:anywhere}
+.ramline{height:6px;background:#29243b;border-radius:10px;margin-top:13px;overflow:hidden}
+.ramfill{height:100%;width:18%;background:linear-gradient(90deg,#9333ea,#38bdf8);border-radius:10px}
+.footer{color:#66617b;font-size:9px;letter-spacing:2px;margin-top:30px}
+.clock{font:12px Orbitron;color:#c4b5fd;margin-top:7px}
+.logout{color:#f9a8d4!important}
+@media(max-width:850px){aside{width:205px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.layout{display:block}aside{width:100%;padding:20px}.sub{margin-bottom:15px}hr,.label,.bottom{display:none}nav{display:flex;overflow-x:auto}nav a{white-space:nowrap;padding:10px}main{padding:20px}.cards{grid-template-columns:1fr}.system{grid-template-columns:1fr}.hero h2{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="logo">APOL<span>LON</span></div>
+  <div class="sub">NEXUS / ELITE SYSTEM</div>
+  <hr>
+  <div class="label">CONTROL MENU</div>
+  <nav>
+    <a class="active" href="/admin/dashboard"><b>◈</b> Genel Bakış</a>
+    <a href="#system"><b>▦</b> Sistem Bilgileri</a>
+    <a href="#about"><b>✧</b> Hakkında</a>
+    <a class="logout" href="/admin/logout"><b>↪</b> Güvenli Çıkış</a>
+  </nav>
+  <div class="bottom">
+    <div class="profile">
+      <div class="avatar">A</div>
+      <div><strong>Administrator</strong><small>Yetkili oturum</small></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+  <div class="top">
+    <div>
+      <div class="eyebrow">NEXUS // COMMAND CENTER</div>
+      <h1>Hoş Geldin, Yönetici.</h1>
+      <div class="desc">APOLLON sistem kontrol merkezine hoş geldin.</div>
+      <div class="clock" id="clock">--:--:--</div>
+    </div>
+    <div class="live"><span class="dot"></span> ALL SYSTEMS ONLINE</div>
+  </div>
+
+  <section class="hero">
+    <small>◈ APOLLON NEXUS SYSTEM</small>
+    <h2>CONTROL THE SYSTEM.</h2>
+    <p>Tek merkezden kontrol. Güçlü altyapı, modern yönetim ve APOLLON'un dijital kontrol merkezi.</p>
+  </section>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">SYSTEM STATUS</div>
+      <div class="value purple">ONLINE</div>
+      <small>Sunucu aktif olarak çalışıyor</small>
+    </div>
+    <div class="card">
+      <div class="card-label">UPTIME</div>
+      <div class="value blue"><%= Math.floor(uptime / 3600) %>h <%= Math.floor((uptime % 3600) / 60) %>m</div>
+      <small>Çalışma süresi</small>
+    </div>
+    <div class="card">
+      <div class="card-label">MEMORY USAGE</div>
+      <div class="value pink"><%= ram %> MB</div>
+      <small>Uygulamanın kullandığı RAM</small>
+      <div class="ramline"><div class="ramfill"></div></div>
+    </div>
+  </div>
+
+  <div class="section-title" id="system">◈ SYSTEM INFORMATION</div>
+  <div class="system">
+    <div class="info"><span>NODE.JS VERSION</span><strong><%= nodeVersion %></strong></div>
+    <div class="info"><span>OPERATING SYSTEM</span><strong><%= platform %></strong></div>
+    <div class="info"><span>TOTAL MEMORY</span><strong><%= totalRam %> GB</strong></div>
+    <div class="info"><span>SERVER PORT</span><strong><%= port %></strong></div>
+    <div class="info"><span>HOSTNAME</span><strong><%= hostname %></strong></div>
+    <div class="info"><span>ADMIN SESSION</span><strong style="color:#6ee7a5">AUTHENTICATED</strong></div>
+  </div>
+
+  <div class="section-title" id="about">✧ APOLLON / ELITE ACCESS</div>
+  <div class="info">
+    <span>PLATFORM</span>
+    <strong>APOLLON NEXUS — CONTROL CENTER</strong>
+    <p class="desc">Yönetim oturumu güvenli şekilde açık. İşlemlerinizi bu panel üzerinden yönetin.</p>
+  </div>
+
+  <div class="footer">APOLLON NEXUS © 2026 · ALL SYSTEMS OPERATIONAL</div>
+</main>
+</div>
+<script>
+function updateClock(){
+ const now=new Date();
+ document.getElementById("clock").textContent=
+ "LOCAL TIME // "+now.toLocaleTimeString("tr-TR");
+}
+updateClock();
+setInterval(updateClock,1000);
+</script>
+</body>
+</html>

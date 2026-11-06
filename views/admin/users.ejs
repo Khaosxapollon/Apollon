@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APOLLON | Üye Yönetimi</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080710;color:white;font-family:Arial;padding:22px}.wrap{max-width:1000px;margin:auto}h1{color:#bd8aff}.search{display:flex;gap:10px;margin:25px 0}input{flex:1;min-width:0;padding:13px;background:#121020;border:1px solid #6541a5;border-radius:8px;color:white}button,.back{padding:12px 16px;background:#7135bd;border:0;border-radius:8px;color:white;text-decoration:none;cursor:pointer}.user{background:#151322;border:1px solid #38294f;padding:18px;border-radius:12px;margin:12px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.muted{color:#aaa}.blocked{color:#ff7777}.active{color:#8be6ae}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>APOLLON / ÜYE YÖNETİMİ</h1>
+<a class="back" href="/admin/dashboard">← Yönetim paneli</a>
+<form class="search" method="GET" action="/admin/users">
+<input name="search" value="<%= search %>" placeholder="Kullanıcı adı ara...">
+<button type="submit">ARA</button>
+</form>
+<p class="muted">Bulunan üye: <%= users.length %></p>
+<% if (users.length === 0) { %><p>Henüz üye bulunamadı.</p><% } %>
+<% users.forEach(user => { %>
+<div class="user">
+<div>
+<strong>#<%= user.id %> — <%= user.username %></strong>
+<p class="muted">Kayıt: <%= user.created_at %></p>
+<span class="<%= user.blocked ? 'blocked' : 'active' %>"><%= user.blocked ? 'ENGELLİ' : 'AKTİF' %></span>
+</div>
+<form method="POST" action="/admin/users/<%= user.id %>/toggle">
+<button type="submit"><%= user.blocked ? 'Engeli kaldır' : 'Üyeyi engelle' %></button>
+</form>
+</div>
+<% }) %>
+</div>
+</body>
+</html>
