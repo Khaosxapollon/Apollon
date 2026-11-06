@@ -326,3 +326,87 @@ footer {
 
 /* ===== END APOLLON CONTACT ===== */
 
+
+/* APOLLON DARK BIO */
+.ap-dark-bio {
+  padding: 110px 7%;
+  background:
+    radial-gradient(ellipse at center, #54208033, transparent 65%),
+    #09070e;
+  text-align: center;
+  border-top: 1px solid #a855f733;
+  border-bottom: 1px solid #a855f733;
+}
+
+.ap-dark-bio-inner {
+  max-width: 850px;
+  margin: auto;
+}
+
+.ap-dark-label {
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.ap-dark-bio h2 {
+  color: white;
+  font-size: clamp(55px, 12vw, 105px);
+  font-weight: 900;
+  letter-spacing: 8px;
+  margin: 25px 0;
+  text-shadow: 0 0 35px #9333ea88;
+}
+
+.ap-dark-line {
+  width: 90px;
+  height: 2px;
+  margin: 28px auto;
+  background: linear-gradient(90deg, transparent, #c084fc, transparent);
+}
+
+.ap-dark-bio h3 {
+  color: #e9d5ff;
+  font-size: clamp(18px, 4vw, 27px);
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.ap-dark-bio p {
+  color: #a78bfa;
+  font-size: 17px;
+  margin: 22px 0;
+}
+
+.ap-dark-bio .ap-dark-highlight {
+  color: #d8b4fe;
+  max-width: 720px;
+  margin: 30px auto;
+  text-shadow: 0 0 20px #9333ea44;
+}
+
+.ap-dark-bio h4 {
+  color: white;
+  font-size: 21px;
+  letter-spacing: 4px;
+}
+
+.ap-dark-sign {
+  display: block;
+  margin-top: 35px;
+  color: #806b91;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+@media(max-width:600px) {
+  .ap-dark-bio {
+    padding: 75px 6%;
+  }
+  .ap-dark-bio h2 {
+    letter-spacing: 4px;
+  }
+}
+
+/* END APOLLON DARK BIO */
